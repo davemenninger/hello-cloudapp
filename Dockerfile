@@ -1,5 +1,7 @@
 FROM elixir:1.9.4-alpine AS base
 
+WORKDIR /app
+
 # This step installs all the build tools we'll need
 RUN apk update \
   && apk upgrade --no-cache \
@@ -16,8 +18,6 @@ COPY . .
 FROM base AS test
 
 ENV MIX_ENV=test
-
-WORKDIR /app
 
 FROM base AS builder
 
