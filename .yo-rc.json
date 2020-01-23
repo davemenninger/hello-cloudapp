@@ -1,0 +1,9 @@
+{
+  "generator-cloudapp": {
+    "promptValues": {
+      "name": "hello-cloudapp",
+      "githubUser": "davemenninger",
+      "githubRepository": "hello-cloudapp"
+    }
+  }
+}

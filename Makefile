@@ -1,5 +1,10 @@
+.PHONY: all greet list-stacks deploy-pipeline delete-pipeline \ 
+	deploy-cluster delete-cluster test default-test mix-test
+
+all: greet
+
 greet:
-	echo "hello, hello-cloudapp"
+	@ echo "hello, hello-cloudapp"
 
 list-stacks:
 	aws cloudformation list-stacks
@@ -9,6 +14,12 @@ deploy-pipeline:
 
 delete-pipeline:
 	aws cloudformation delete-stack --stack-name hello-cloudapp-pipeline
+
+deploy-cluster:
+	aws cloudformation deploy --template-file cluster.yml --stack-name hello-cloudapp-cluster --capabilities CAPABILITY_NAMED_IAM
+
+delete-cluster:
+	aws cloudformation delete-stack --stack-name hello-cloudapp-cluster
 
 test: mix-test
 
