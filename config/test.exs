@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :hello_cloudapp, HelloCloudapp.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "hello_cloudapp_test",
   hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
