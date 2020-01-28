@@ -1,0 +1,17 @@
+.PHONY: list-stacks deploy-pipeline delete-pipeline \ 
+	deploy-cluster delete-cluster test
+
+list-stacks:
+	aws cloudformation list-stacks
+
+deploy-pipeline:
+	aws cloudformation deploy --template-file pipeline.yml --stack-name hello-cloudapp-pipeline --capabilities CAPABILITY_NAMED_IAM
+
+delete-pipeline:
+	aws cloudformation delete-stack --stack-name hello-cloudapp-pipeline
+
+deploy-cluster:
+	aws cloudformation deploy --template-file cluster.yml --stack-name hello-cloudapp-cluster --capabilities CAPABILITY_NAMED_IAM
+
+delete-cluster:
+	aws cloudformation delete-stack --stack-name hello-cloudapp-cluster

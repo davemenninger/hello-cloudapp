@@ -4,8 +4,8 @@ use Mix.Config
 config :hello_cloudapp, HelloCloudapp.Repo,
   username: "postgres",
   password: "postgres",
-  database: "hello_cloudapp_dev",
-  hostname: "localhost",
+  database: "hello-cloudapp_dev",
+  hostname: "db",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
